@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    text-align:center;
+    padding-top:40vh;
+    height:100vh;
+    overflow:hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0,0,0);
+}
+div {
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+  }
+div:first-of-type {   
+    font-size: 36px;
+    font-family: 'Roboto';
+    text-align: center;
+    color: #F2C1F3; 
+  animation: showup 7s infinite;
+}
+
+div:last-of-type {
+    font-weight: bolder;
+    
+    font-family: 'Sacramento', cursive;
+    font-size: 64px; 
+    color: #BAB8F3;
+  width:0px;
+  animation: reveal 7s infinite;
+}
+
+div:last-of-type span {
+  margin-left:-355px;
+  animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:355px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:355px;}
+}
+.bg{
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image:linear-gradient(-60deg,#FEC8D8 50%,#E0FEFE 50%) ;
+    bottom: 0;
+    left: -50%;
+    opacity:.5;
+    position: fixed;
+    right:-50%;
+    top:0;
+    z-index: -1;
+}
+.bg2{
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+.bg3{
+    animation-duration: 5s;
+}
+@keyframes slide{
+    0%{
+        transform: translateX(-25%);
+    }
+    100%{
+        transform: translateX(25%);
+    }
+}
